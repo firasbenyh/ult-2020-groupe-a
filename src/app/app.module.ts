@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'cart', loadChildren: () => import('./shopping-cart/shopping-cart.module').then(m => m.ShoppingCartModule) },
+  { path: 'store', loadChildren: () => import('./store/store.module').then(m => m.StoreModule) },
   { path: '**', component: NotFoundComponent}
 ];
 
@@ -29,7 +31,8 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
