@@ -1,12 +1,11 @@
-
 <h2>Details about {{ product.productName }}</h2>
 
 <div>
-    <h3><strong class="small">Produit name : </strong>{{ product.productName }}</h3>
-    <h4><strong class="small">Price : </strong>{{ product.price | currency:'TND ' }}</h4>
-    <p>Description : {{ product.description }}</p>
-    <button class="btn btn-success">
-      <span class="material-icons"> add_shopping_cart</span>Add to cart
-    </button><br><br>
-    <img src="{{'assets/img/' + product.image}}" alt="{{product.image}}" style="width: 200px;">
+  <h3><strong class="small">Produit name : </strong>{{ product.productName }}</h3>
+  <h4><strong class="small">Price : </strong>{{ product.price | currency:'TND ' }}</h4>
+  <p>Description : {{ product.description }}</p>
+  <button class="btn btn-success" (click)="addToCart(product)">
+    <span class="material-icons"> add_shopping_cart</span>Add to cart
+  </button><br><br>
+  <img src="{{'assets/img/' + product.image}}" alt="{{product.image}}" style="width: 200px;">
 </div>

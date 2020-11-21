@@ -1,1 +1,43 @@
-<p>shopping-cart works!</p>
+<div *ngIf="cartContent.length == 0; else elseBlock" class="alert alert-danger">
+  Your cart is empty!
+</div>
+<ng-template #elseBlock>
+  <button class="btn btn-outline-danger" (click)="clearCart()">
+    Clear Cart
+  </button>
+  <br>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Product name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Price each</th>
+        <th scope="col">Total price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of cartContent;index as i">
+        <th scope="row">{{ i+1 }}</th>
+        <td>{{ product.productName }}</td>
+        <td>{{ product.quantity }}</td>
+        <td>{{ product.price | currency:'TND ' }}</td>
+        <td>{{ product.price * product.quantity | currency:'TND ' }}</td>
+      </tr>
+    </tbody>
+    <thead class="thead-light">
+      <tr>
+        <th scope="col" colspan="4" class="text-right">Pre-tax total: </th>
+        <th scope="col">{{ totalPrice | currency:'TND ' }}</th>
+      </tr>
+      <tr>
+        <th scope="col" colspan="4" class="text-right">Tax amount (20%): </th>
+        <th scope="col">{{ totalPrice * TAX_RATE | currency:'TND ' }}</th>
+      </tr>
+      <tr>
+        <th scope="col" colspan="4" class="text-right">Price inclusive VAT : </th>
+        <th scope="col">{{ totalPrice + (totalPrice * TAX_RATE) | currency:'TND ' }}</th>
+      </tr>
+    </thead>
+  </table>
+</ng-template>
