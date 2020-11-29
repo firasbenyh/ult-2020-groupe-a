@@ -1,0 +1,39 @@
+<fieldset>
+  <legend>Customer Informations</legend>
+  <form [formGroup]="customerInfo" (ngSubmit)="onSubmitForm()">
+    <div class="form-group">
+      <label for="firstName">First name</label>
+      <input type="text" formControlName="firstName" id="firstName" class="form-control"
+        placeholder="First name goes here">
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last name</label>
+      <input type="text" formControlName="lastName" id="lastName" class="form-control"
+        placeholder="Last name goes here">
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="text" formControlName="phone" id="phone" class="form-control" placeholder="Phone goes here">
+    </div>
+    <div formGroupName="address">
+      <div class="form-group">
+        <label for="street">Street</label>
+        <input type="text" formControlName="street" id="street" class="form-control"
+          placeholder="Street address goes here">
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" formControlName="city" id="city" class="form-control" placeholder="City address goes here">
+      </div>
+      <div class="form-group">
+        <label for="zipCode">Zip Code</label>
+        <input type="text" formControlName="zipCode" id="zipCode" class="form-control"
+          placeholder="Zip code number goes here">
+      </div>
+
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-block btn-primary">
+    </div>
+  </form>
+</fieldset>

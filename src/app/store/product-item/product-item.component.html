@@ -1,0 +1,13 @@
+<div class="card py-1" style="width: 20rem; height: 36rem;">
+  <img src="assets/img/{{ product.image }}" class="card-img-top" alt="{{ product.productName}}">
+  <div class="card-body">
+    <h5 class="card-title" [title]="'Mode details about ' + product.productName">
+      {{ product.productName}}
+    </h5>
+    <p *ngIf="product.description" class="card-text">
+      <span class="font-weight-bold">Description: </span> {{ product.description | slice:0:50 }} [...]
+    </p>
+    <a [routerLink]="['/store/product-details/', productId]" class="btn btn-primary m-2">Details</a>
+    <a class="btn btn-success" (click)="shareEvent.emit(product.productName)">Share</a>
+  </div>
+</div>

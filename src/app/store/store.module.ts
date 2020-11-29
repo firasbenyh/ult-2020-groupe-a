@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { StoreComponent } from './store.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { ProductItemComponent } from './product-item/product-item.component';
 
 
 const routes: Routes = [
@@ -11,7 +12,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [StoreComponent, ProductDetailsComponent],
+  declarations: [StoreComponent, ProductDetailsComponent, ProductItemComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes)

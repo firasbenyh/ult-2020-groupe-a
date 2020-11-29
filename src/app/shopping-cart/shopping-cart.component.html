@@ -2,9 +2,18 @@
   Your cart is empty!
 </div>
 <ng-template #elseBlock>
-  <button class="btn btn-outline-danger" (click)="clearCart()">
-    Clear Cart
-  </button>
+  <div class="row">
+    <div class="col-md-9">
+      <button class="btn btn-outline-danger" (click)="clearCart()">
+        Clear Cart
+      </button>
+    </div>
+    <div class="col-md-3">
+      <div class="text-right">
+        <button routerLink="customer-info" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
   <br>
   <table class="table">
     <thead class="thead-dark">
