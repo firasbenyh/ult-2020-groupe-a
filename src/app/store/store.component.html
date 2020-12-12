@@ -1,7 +1,7 @@
 <h1>Products list</h1>
 <div class="row">
   <div *ngFor="let product of productList; index as productId" class="col-md-4 py-3">
-    <app-product-item [product]="product" [productId]="productId" (shareEvent)="shareProduct($event)">
+    <app-product-item [product]="product" [productId]="product._id" (shareEvent)="shareProduct($event)">
     </app-product-item>
   </div>
 </div>

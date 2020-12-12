@@ -24,7 +24,7 @@ export class StoreComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
-    this.productService.deleteProduct(10).subscribe(
+    this.productService.readAllProducts().subscribe(
       (res) => this.productList = res
     );
   }
